@@ -57,7 +57,8 @@ exports.config = {
         "platformName": process.env.PLATFORM_NAME || "android",
         "platformVersion": process.env.PLATFORM_VARSION || "10",
         "automationName": "UiAutomator2",
-        "app": process.env.APP_PATH || `${__dirname}/Android-NativeDemoApp-0.4.0.apk`
+        "app": process.env.APP_PATH || `${__dirname}\\Android-NativeDemoApp-0.4.0.apk`,
+        "appWaitActivity": "*"
     }],
     //
     // ===================
@@ -100,7 +101,7 @@ exports.config = {
     connectionRetryTimeout: 120000,
     //
     // Default request retries count
-    connectionRetryCount: 3,
+    connectionRetryCount: 1,
     //
     // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
@@ -108,7 +109,6 @@ exports.config = {
     // commands. Instead, they hook themselves up into the test process.
     services: [
         ['appium', {
-            command: 'appium',
             logPath: './'
         }]
     ],

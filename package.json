@@ -1,13 +1,18 @@
 {
     "devDependencies": {
+        "@faker-js/faker": "^7.6.0",
         "@wdio/allure-reporter": "^8.3.5",
         "@wdio/appium-service": "^8.3.8",
         "@wdio/cli": "^8.3.8",
         "@wdio/local-runner": "^8.3.8",
         "@wdio/mocha-framework": "^8.3.0",
-        "@wdio/spec-reporter": "^8.3.0"
+        "@wdio/spec-reporter": "^8.3.0",
+        "appium": "^1.22.3"
     },
     "scripts": {
         "wdio": "wdio run wdio.conf.js"
+    },
+    "dependencies": {
+        "chai": "^4.3.7"
     }
 }
