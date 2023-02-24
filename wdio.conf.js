@@ -242,6 +242,7 @@ exports.config = {
         if (!passed) {
             await browser.takeScreenshot();
         }
+        await $('//*[@content-desc="Home"]').click()
     },
 
 
