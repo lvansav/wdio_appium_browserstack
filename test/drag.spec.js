@@ -1,6 +1,6 @@
 const chai = require('chai')
 
-suite("Drag-and-Drop cases=", async () => {
+suite("Drag-and-Drop cases", async () => {
     test.only(`Compare puzzle's pieces into image on the "Drag" screen`, async () => {
         await $('//*[@content-desc="Drag"]').click()
 
