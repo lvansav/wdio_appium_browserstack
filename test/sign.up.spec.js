@@ -15,8 +15,6 @@ suite('Sign in cases', () => {
         await $('//*[@content-desc="input-repeat-password"]').setValue(password)
         await $('//*[@content-desc="button-SIGN UP"]').click()
 
-        await $('//android.widget.FrameLayout').waitForDisplayed({ timeout: 5000 })
-
         const sucsessTitle = await $('//*[@resource-id="android:id/alertTitle"]').getText()
         const sucessMsg = await $('//*[@resource-id="android:id/message"]').getText()
         const okBtn = await $('//*[@resource-id="android:id/button1"]')
