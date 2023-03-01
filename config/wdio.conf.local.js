@@ -5,6 +5,7 @@ exports.config = {
     specs: [
         '../test/**/*.js'
     ],
+    exclude: [],
     maxInstances: 1,
     capabilities: [{
         "deviceName": process.env.DEVICE || "CUUGRWTW4TNF4DDQ",
@@ -19,7 +20,7 @@ exports.config = {
     baseUrl: 'http://localhost',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
-    connectionRetryCount: 1,
+    connectionRetryCount: 3,
     services: [
         ['appium', {
             logPath: './'
@@ -33,6 +34,5 @@ exports.config = {
     },
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
         await browser.takeScreenshot()
-        await $('//*[@content-desc="Home"]').click()
     },
 }

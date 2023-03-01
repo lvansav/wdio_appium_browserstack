@@ -8,10 +8,13 @@
         "@wdio/mocha-framework": "^8.3.0",
         "@wdio/spec-reporter": "^8.3.0",
         "appium": "^1.22.3",
+        "browserstack-local": "^1.5.1",
         "chai": "^4.3.7"
     },
     "scripts": {
-        "wdio": "wdio run ./config/wdio.conf.js",
+        "wdio:bs:galaxy:a51": "wdio run ./config/wdio.conf.bs.galaxyA51.js",
+        "wdio:bs:galaxy:s21u": "wdio run ./config/wdio.conf.bs.galaxyS21U.js",
+        "wdio:local": "wdio run ./config/wdio.conf.local.js",
         "allure:history": "cp -r ./docs/history/. ./allure-results/history",
         "allure:generate": "npx allure generate allure-results -o allure-report --clean",
         "allure:serve": "allure open allure-report",
