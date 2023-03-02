@@ -8,18 +8,19 @@ exports.config = {
     ],
     exclude: [],
     maxInstances: 2,
-    
-    commonCapabilities: [{
-      project: "First Webdriverio Android Project",
-      build: `Webdriverio Android Demo App ${new Date().toJSON()}`,
-      app: process.env.BROWSERSTACK_APP_ID,
-      'browserstack.debug': true
-    }],
 
     capabilities: [{
+        project: "First Webdriverio Android Project",
+        build: `Webdriverio Android Demo App ${new Date().toJSON()}`,
+        app: process.env.BROWSERSTACK_APP_ID,
+        'browserstack.debug': true,
         device: 'Samsung Galaxy S21 Ultra',
         os_version: "11.0",
       }, {
+        project: "First Webdriverio Android Project",
+        build: `Webdriverio Android Demo App ${new Date().toJSON()}`,
+        app: process.env.BROWSERSTACK_APP_ID,
+        'browserstack.debug': true,
         device: 'Samsung Galaxy A51',
         os_version: "10.0",
     }],
