@@ -1,6 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"broken","Wed Mar 01 11:41:02 EET 2023","Wed Mar 01 11:42:02 EET 2023","60023","","Drag-and-Drop cases=","","Drag-and-Drop cases=","Compare puzzle's pieces into image on the ""Drag"" screen","Compare puzzle's pieces into image on the ""Drag"" screen",""
-"broken","Wed Mar 01 11:42:49 EET 2023","Wed Mar 01 11:43:49 EET 2023","60019","","Fill out forms","","Fill out forms","Fill out the form","Fill out the form",""
-"passed","Wed Mar 01 11:47:05 EET 2023","Wed Mar 01 11:48:38 EET 2023","92552","","Sign in cases","","Sign in cases","Sign up on the ""Login"" screen","Sign up on the ""Login"" screen",""
-"broken","Wed Mar 01 11:49:09 EET 2023","Wed Mar 01 11:52:09 EET 2023","180083","","Swipe","","Swipe","Find the hidden element","Find the hidden element",""
-"broken","Wed Mar 01 11:44:50 EET 2023","Wed Mar 01 11:45:50 EET 2023","60127","","Login cases","","Login cases","Sign in on the ""Login"" screen","Sign in on the ""Login"" screen",""
