@@ -3,11 +3,10 @@ on:
   push:
     branches: [main]
 jobs:
-  example_matrix:
+  test:
     strategy:
       matrix:
         device: [galaxy:a51, galaxy:s21u]
-  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
