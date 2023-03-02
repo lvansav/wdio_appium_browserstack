@@ -35,6 +35,11 @@ jobs:
       - name: Docs
         if: always()
         run: npm run allure:docs
+      - name: Commit docs
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: 'docs/*'
+          disable_globbing: true
       - name: Deploy report
         uses: JamesIves/github-pages-deploy-action@4.1.4
         if: always()
