@@ -1,4 +1,0 @@
-{
-  "script": "browserstack_executor: {\"action\": \"setSessionName\", \"arguments\": {\"name\": \"Sign up on the \"Login\" screen\"}}",
-  "args": []
-}
