@@ -20,30 +20,32 @@ jobs:
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           BROWSERSTACK_APP_ID: ${{ secrets.BROWSERSTACK_APP_ID }}
         run: npm run wdio:bs:all:devices
-      - name: Copy History
+      - name: Get Allure history
+        uses: actions/checkout@v2
         if: always()
-        run: npm run allure:history
-      - name: Generate report
-        if: always()
-        run: npm run allure:generate
-      - name: Upload report
-        uses: actions/upload-artifact@v1
-        if: always()
-        with: 
-          name: allure-results
-          path: ./allure-results
-      - name: Docs
-        if: always()
-        run: npm run allure:docs
-      - name: Commit docs
-        uses: stefanzweifel/git-auto-commit-action@v4
+        continue-on-error: true
         with:
-          commit_message: 'Commit changes'
-      - name: Deploy report
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+          ref: gh-pages
+          path: gh-pages
+      - name: Test marketplace action
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history      
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: docs
-          target-folder: docs
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
