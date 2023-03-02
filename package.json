@@ -13,6 +13,7 @@
         "chai": "^4.3.7"
     },
     "scripts": {
+        "wdio:bs:all:devices": "wdio run ./config/wdio.conf.parallel.devices.js",
         "wdio:bs:galaxyA51": "wdio run ./config/wdio.conf.bs.galaxyA51.js",
         "wdio:bs:galaxyS21U": "wdio run ./config/wdio.conf.bs.galaxyS21U.js",
         "wdio:local": "wdio run ./config/wdio.conf.local.js",

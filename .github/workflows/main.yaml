@@ -4,9 +4,6 @@ on:
     branches: [main]
 jobs:
   test:
-    strategy:
-      matrix:
-        device: [galaxyA51, galaxyS21U]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,7 +19,7 @@ jobs:
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           BROWSERSTACK_APP_ID: ${{ secrets.BROWSERSTACK_APP_ID }}
-        run: npm run wdio:bs:${{ matrix.device }}
+        run: npm run wdio:bs:all:devices
       - name: Copy History
         if: always()
         run: npm run allure:history
