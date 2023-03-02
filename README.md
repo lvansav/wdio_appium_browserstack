@@ -18,7 +18,8 @@ For start you need to follow next step:
 For run on browserstack:
 
 On Samsung Galaxy A51 - `npm run wdio:bs:galaxy:a51`
-On Samsung Galaxy S21 Ultra `wdio:bs:galaxy:s21u`
+On Samsung Galaxy S21 Ultra - `wdio:bs:galaxy:s21u`
+On each device - `wdio:bs:all:devices`
 
 For run locally:
 
