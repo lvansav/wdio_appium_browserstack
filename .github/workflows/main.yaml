@@ -20,13 +20,6 @@ jobs:
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           BROWSERSTACK_APP_ID: ${{ secrets.BROWSERSTACK_APP_ID }}
         run: npm run wdio:bs:all:devices
-      - name: Get Allure history
-        uses: actions/checkout@v2
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
       - name: Allure Report action
         uses: simple-elf/allure-report-action@master
         if: always()
@@ -34,6 +27,7 @@ jobs:
           allure_results: allure-results
           allure_report: allure-report
           allure_history: allure-history
+          keep_reports: 2
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2
