@@ -7,7 +7,7 @@ exports.config = {
         '../test/**/*.js'
     ],
     exclude: [],
-    maxInstances: 5,
+    maxInstances: 2,
     
     capabilities: [{
       project: "First Webdriverio Android Project",
