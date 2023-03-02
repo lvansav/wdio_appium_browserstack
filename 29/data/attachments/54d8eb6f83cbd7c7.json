@@ -1,0 +1,4 @@
+{
+  "script": "browserstack_executor: {\"action\": \"setSessionName\", \"arguments\": {\"name\": \"Find the hidden element\"}}",
+  "args": []
+}
