@@ -23,12 +23,6 @@ jobs:
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           BROWSERSTACK_APP_ID: ${{ secrets.BROWSERSTACK_APP_ID }}
         run: npm run wdio:bs:all:devices
-    
-      - name: Upload allure-results
-        uses: actions/upload-artifact@master
-        with:
-          name: allure-results
-          path: allure-results
           
       - name: Get Allure history
         uses: actions/checkout@v2
