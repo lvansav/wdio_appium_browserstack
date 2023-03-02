@@ -6,7 +6,7 @@ jobs:
   test:
     strategy:
       matrix:
-        device: [galaxy:a51, galaxy:s21u]
+        device: [galaxyA51, galaxyS21U]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

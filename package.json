@@ -13,8 +13,8 @@
         "chai": "^4.3.7"
     },
     "scripts": {
-        "wdio:bs:galaxy:a51": "wdio run ./config/wdio.conf.bs.galaxyA51.js",
-        "wdio:bs:galaxy:s21u": "wdio run ./config/wdio.conf.bs.galaxyS21U.js",
+        "wdio:bs:galaxyA51": "wdio run ./config/wdio.conf.bs.galaxyA51.js",
+        "wdio:bs:galaxyS21U": "wdio run ./config/wdio.conf.bs.galaxyS21U.js",
         "wdio:local": "wdio run ./config/wdio.conf.local.js",
         "allure:history": "cp -r $(pwd)/docs/history/. $(pwd)/allure-results/history",
         "allure:generate": "npx allure generate allure-results -o allure-report --clean",
