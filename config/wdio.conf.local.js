@@ -27,7 +27,7 @@ exports.config = {
         }]
     ],
     framework: 'mocha',
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
+    reporters: ['spec',['allure', {outputDir: './allure-results'}]],
     mochaOpts: {
         ui: 'tdd',
         timeout: 360000

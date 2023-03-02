@@ -1,6 +1,6 @@
 exports.config = {
-    user: process.env.BROWSERSTACK_USERNAME,
-    key: process.env.BROWSERSTACK_ACCESS_KEY,
+    user: process.env.BROWSERSTACK_USERNAME || 'vitanave_F8exmw',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || 'kAqseesEdkwfryk8vwwP',
   
     updateJob: false,
     specs: [
@@ -12,14 +12,14 @@ exports.config = {
     capabilities: [{
         project: "First Webdriverio Android Project",
         build: `Webdriverio Android Demo App ${new Date().toJSON()}`,
-        app: process.env.BROWSERSTACK_APP_ID,
+        app: process.env.BROWSERSTACK_APP_ID || "bs://faf70eba032251581a1e2e05f5e7f3a7afe3d3f0",
         'browserstack.debug': true,
         device: 'Samsung Galaxy S21 Ultra',
         os_version: "11.0",
       }, {
         project: "First Webdriverio Android Project",
         build: `Webdriverio Android Demo App ${new Date().toJSON()}`,
-        app: process.env.BROWSERSTACK_APP_ID,
+        app: process.env.BROWSERSTACK_APP_ID || "bs://faf70eba032251581a1e2e05f5e7f3a7afe3d3f0",
         'browserstack.debug': true,
         device: 'Samsung Galaxy A51',
         os_version: "10.0",
@@ -33,7 +33,7 @@ exports.config = {
     connectionRetryCount: 3,
   
     framework: 'mocha',
-    reporters: ['spec',['allure', {outputDir: '../allure-results'}]],
+    reporters: ['spec',['allure', {outputDir: './allure-results'}]],
     mochaOpts: {
       ui: 'tdd',
       timeout: 360000
