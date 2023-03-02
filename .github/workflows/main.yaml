@@ -38,7 +38,6 @@ jobs:
       - name: Commit docs
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          file_pattern: 'docs/*'
           commit_message: 'Commit changes'
           disable_globbing: true
       - name: Deploy report
