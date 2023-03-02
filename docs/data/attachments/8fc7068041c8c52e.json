@@ -1,8 +1,0 @@
-{
-  "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@content-desc=\"Login\"]\"}\n  (Session info: chrome=108.0.5359.128)\n  (Driver info: chromedriver=108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}),platform=Linux 5.16.7-200.fc35.x86_64 x86_64)",
-  "sessionId": "33be86e7cf437742e4b17e28e592e670ba5a8951",
-  "capabilities": {
-    "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@content-desc=\"Login\"]\"}\n  (Session info: chrome=108.0.5359.128)\n  (Driver info: chromedriver=108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}),platform=Linux 5.16.7-200.fc35.x86_64 x86_64)",
-    "sessionId": "33be86e7cf437742e4b17e28e592e670ba5a8951"
-  }
-}

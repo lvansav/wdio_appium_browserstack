@@ -1,8 +1,0 @@
-{
-  "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@content-desc=\"Swipe\"]\"}\n  (Session info: chrome=108.0.5359.128)\n  (Driver info: chromedriver=108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}),platform=Linux 4.1.13-101.fc21.x86_64 x86_64)",
-  "sessionId": "692ddc0eb2915b7e6174a73f600e4efb02d657c3",
-  "capabilities": {
-    "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@content-desc=\"Swipe\"]\"}\n  (Session info: chrome=108.0.5359.128)\n  (Driver info: chromedriver=108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}),platform=Linux 4.1.13-101.fc21.x86_64 x86_64)",
-    "sessionId": "692ddc0eb2915b7e6174a73f600e4efb02d657c3"
-  }
-}
