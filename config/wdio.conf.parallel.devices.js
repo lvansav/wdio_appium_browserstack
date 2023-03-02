@@ -31,6 +31,8 @@ exports.config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
+    specFileRetries: 2,
+    specFileRetriesDelay: 30,
   
     framework: 'mocha',
     reporters: ['spec',['allure', {outputDir: './allure-results'}]],
