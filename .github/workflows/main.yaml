@@ -32,11 +32,14 @@ jobs:
         with: 
           name: allure-results
           path: ./allure-results
+      - name: Docs
+        if: always()
+        run: npm run allure:docs
       - name: Deploy report
         uses: JamesIves/github-pages-deploy-action@4.1.4
         if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: allure-report
+          folder: docs
           target-folder: docs

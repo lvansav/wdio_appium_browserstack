@@ -20,6 +20,6 @@
         "allure:history": "cp -r $(pwd)/docs/history/. $(pwd)/allure-results/history",
         "allure:generate": "npx allure generate allure-results -o allure-report --clean",
         "allure:serve": "allure open allure-report",
-        "allure:docs": "rm -rf ./docs && cp -r ./allure-report/. ./docs"
+        "allure:docs": "rm -rf $(pwd)/docs && cp -r $(pwd)/allure-report/. $(pwd)/docs"
     }
 }
