@@ -6,7 +6,7 @@ export const config = {
     
     port: 4723,
     specs: [
-        '../test/**/*.js'
+        '../test/specs/**/*.js'
     ],
     exclude: [],
     maxInstances: 1,
