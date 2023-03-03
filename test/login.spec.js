@@ -1,5 +1,4 @@
-const { faker } = require('@faker-js/faker')
-const chai = require('chai')
+import { faker } from '@faker-js/faker'
 
 
 suite('Login cases', () => {
@@ -21,8 +20,8 @@ suite('Login cases', () => {
 
         await okBtn.click()
 
-        chai.expect(sucsessTitle).to.equal('Success')
-        chai.expect(sucessMsg).to.equal('You are logged in!')
+        expect(sucsessTitle).toEqual('Success')
+        expect(sucessMsg).toEqual('You are logged in!')
         expect(await $('//*[@resource-id="android:id/alertTitle"]')).not.toBeDisplayed()
         expect(await $('//*[@resource-id="android:id/message"]')).not.toBeDisplayed()
         expect(await $('//*[@resource-id="android:id/button1"]')).not.toBeDisplayed()

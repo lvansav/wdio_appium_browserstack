@@ -1,5 +1,3 @@
-const chai = require('chai')
-
 suite("Drag-and-Drop cases", async () => {
     test.only(`Compare puzzle's pieces into image on the "Drag" screen`, async () => {
         await $('//*[@content-desc="Drag"]').click()
@@ -48,8 +46,8 @@ suite("Drag-and-Drop cases", async () => {
 
         await expect(successTitleElem).toBeDisplayed()
         await expect(successMsgElem).toBeDisplayed()
-        chai.expect(successTitle).to.equal('Congratulations')
-        chai.expect(successMsg).to.equal('You made it, click retry if you want to try it again.')
+        await expect(successTitle).toEqual('Congratulations')
+        await expect(successMsg).toEqual('You made it, click retry if you want to try it again.')
         await expect(retryBtn).toBeDisplayed()
     })
 })

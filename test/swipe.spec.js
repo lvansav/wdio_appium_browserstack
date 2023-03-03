@@ -1,6 +1,3 @@
-const chai = require('chai')
-
-
 suite('Swipe', () => {
     test('Find the hidden element', async () => {
         await $('//*[@content-desc="Swipe"]').click()
@@ -48,8 +45,8 @@ suite('Swipe', () => {
         let blockTitle = await block.$('//*[@content-desc="slideTextContainer"]/android.widget.TextView[1]')
         let blockMsg = await block.$('//*[@content-desc="slideTextContainer"]/android.widget.TextView[2]')
 
-        chai.expect(await blockTitle.getText()).to.equal(blockTexts[0].blockTitle)
-        chai.expect(await blockMsg.getText()).to.equal(blockTexts[0].blockMsg)
+        await expect(await blockTitle.getText()).toEqual(blockTexts[0].blockTitle)
+        await expect(await blockMsg.getText()).toEqual(blockTexts[0].blockMsg)
 
         for (let i = 1; i < 6; i++) {
             await driver.touchPerform([
@@ -64,8 +61,8 @@ suite('Swipe', () => {
             let blockTitle = await block.$('//*[@content-desc="slideTextContainer"]/android.widget.TextView[1]')
             let blockMsg = await block.$('//*[@content-desc="slideTextContainer"]/android.widget.TextView[2]')
     
-            chai.expect(await blockTitle.getText()).to.equal(blockTexts[i].blockTitle)
-            chai.expect(await blockMsg.getText()).to.equal(blockTexts[i].blockMsg)
+            await expect(await blockTitle.getText()).toEqual(blockTexts[i].blockTitle)
+            await expect(await blockMsg.getText()).toEqual(blockTexts[i].blockMsg)
         } 
         
         startPercentage = 90

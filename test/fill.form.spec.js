@@ -1,5 +1,4 @@
-const chai = require('chai')
-const { faker } = require('@faker-js/faker')
+import { faker } from '@faker-js/faker'
 
 
 suite('Fill out forms', () => {
@@ -59,9 +58,9 @@ suite('Fill out forms', () => {
         const switchStatus = await $('//*[@content-desc="switch-text"]').getText()
         const dropText = await $('//*[@content-desc="Dropdown"]//android.widget.EditText').getText()
 
-        chai.expect(typedText).to.equal(randWord)
-        chai.expect(switchStatus).to.equal('Click to turn the switch OFF')
-        chai.expect(dropText).to.equal('This app is awesome')
-        chai.expect(popUpMsg).to.equal('This button is active')
+        await expect(typedText).toEqual(randWord)
+        await expect(switchStatus).toEqual('Click to turn the switch OFF')
+        await expect(dropText).toEqual('This app is awesome')
+        await expect(popUpMsg).toEqual('This button is active')
     })
 })
