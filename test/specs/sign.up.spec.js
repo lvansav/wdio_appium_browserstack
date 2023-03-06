@@ -1,29 +1,30 @@
 import { faker } from '@faker-js/faker'
+import { loginPage, signUpPage } from '../pages/login.page.js'
 
 
 suite('Sign in cases', () => {
     test('Sign up on the "Login" screen', async () => {
-        await $('//*[@content-desc="Login"]').click()
-        await $('//*[@content-desc="button-sign-up-container"]').click()
+        await loginPage.clickLoginTab()
+        await loginPage.clickSignUpTab()
 
         const email = faker.internet.email()
         const password = faker.internet.password()
 
-        await $('//*[@content-desc="input-email"]').setValue(email)
-        await $('//*[@content-desc="input-password"]').setValue(password)
-        await $('//*[@content-desc="input-repeat-password"]').setValue(password)
-        await $('//*[@content-desc="button-SIGN UP"]').click()
+        await signUpPage.fillEmailField(email)
+        await signUpPage.fillPasswordField(password)
+        await signUpPage.fillRepeatPasswordField(password)
+        await signUpPage.clickSignUpBtn()
 
-        const sucsessTitle = await $('//*[@resource-id="android:id/alertTitle"]').getText()
-        const sucessMsg = await $('//*[@resource-id="android:id/message"]').getText()
-        const okBtn = await $('//*[@resource-id="android:id/button1"]')
+        const successTitle = await signUpPage.getSuccessTitle()
+        const successMsg = await signUpPage.getSuccessMsg()
+        const successTitleText = await signUpPage.getSuccessTitleText()
+        const successMsgTitle = await signUpPage.getSuccessMsgText()
+        const okBtn = await signUpPage.getOkBtn()
 
-        await okBtn.click()
-
-        expect(sucsessTitle).toEqual('Signed Up!')
-        expect(sucessMsg).toEqual('You successfully signed up!')
-        expect(await $('//*[@resource-id="android:id/alertTitle"]')).not.toBeDisplayed()
-        expect(await $('//*[@resource-id="android:id/message"]')).not.toBeDisplayed()
-        expect(await $('//*[@resource-id="android:id/button1"]')).not.toBeDisplayed()
+        expect(successTitleText).toEqual('Signed Up!')
+        expect(successMsgTitle).toEqual('You successfully signed up!')
+        expect(successTitle).not.toBeDisplayed()
+        expect(successMsg).not.toBeDisplayed()
+        expect(okBtn).not.toBeDisplayed()
     })
 })
