@@ -1,62 +1,31 @@
 import { faker } from '@faker-js/faker'
+import { formPage } from '../pages/form.page.js'
 
 
 suite('Fill out forms', () => {
     test('Fill out the form', async () => {
-        await $('//*[@content-desc="Forms"]').click()
+        await formPage.clickFormTab()
 
         const randWord = faker.word.adjective()
 
-        await $('//*[@content-desc="text-input"]').setValue(randWord)
-        await $('//*[@content-desc="switch"]').click()
-        await $('//*[@content-desc="Dropdown"]').click()
-        await $('//android.widget.CheckedTextView[4]').click()
-
-        const { width, height } = await driver.getWindowSize()
+        await formPage.fillTextField(randWord)
+        await formPage.clickSwitcher()
+        await formPage.clickDropdown()
+        await formPage.clickFourthDropOpt()
 
         const anchorPerc = 50
         const startPerc = 90
         const endPerc = 40
 
-        const anchor = Math.round(width * anchorPerc / 100)
-        const startPoint = Math.round(height * startPerc / 100)
-        const endPoint = Math.round(height * endPerc / 100)
+        await formPage.swipeVertical(anchorPerc, startPerc, endPerc)
 
-        await driver.touchPerform([
-            {
-                action: 'press',
-                options: {
-                    x: anchor,
-                    y: startPoint
-                }
-            }, 
-            {
-                action: 'wait', 
-                options: {
-                    mss: 100
-                }
-            },
-            {
-                action: 'moveTo',
-                options: {
-                    x: anchor,
-                    y: endPoint
-                }
-            },
-            {
-                action: 'release',
-                options: {}
-            }
+        await formPage.clickActiveBtn()
+        const popUpMsg = await formPage.getPopUpMsgText()
+        await formPage.clickPopUpOkBtn()
 
-        ])
-
-        await $('//*[@content-desc="button-Active"]').click()
-        const popUpMsg = await $('//*[@resource-id="android:id/message"]').getText()
-        await $('//*[@resource-id="android:id/button1"]').click()
-
-        const typedText = await $('//*[@content-desc="input-text-result"]').getText()
-        const switchStatus = await $('//*[@content-desc="switch-text"]').getText()
-        const dropText = await $('//*[@content-desc="Dropdown"]//android.widget.EditText').getText()
+        const typedText = await formPage.getTypedText()
+        const switchStatus = await formPage.getSwitchText()
+        const dropText = await formPage.getDropText()
 
         await expect(typedText).toEqual(randWord)
         await expect(switchStatus).toEqual('Click to turn the switch OFF')
