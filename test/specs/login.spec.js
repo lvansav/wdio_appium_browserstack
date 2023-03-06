@@ -1,29 +1,32 @@
 import { faker } from '@faker-js/faker'
+import { loginPage } from '../pages/login.page.js'
 
 
 suite('Login cases', () => {
     test('Sign in on the "Login" screen', async () => {     
-        await $('//*[@content-desc="Login"]').click()
+        await loginPage.clickLoginTab()
 
         const email = faker.internet.email()
         const password = faker.internet.password()
         
-        await $('//*[@content-desc="input-email"]').setValue(email)
-        await $('//*[@content-desc="input-password"]').setValue(password)
-        await $('//*[@content-desc="button-LOGIN"]').click()
+        await loginPage.fillEmailField(email)
+        await loginPage.fillPasswordField(password)
+        await loginPage.clickLoginBtn()
 
-        await $('//android.widget.FrameLayout').waitForDisplayed({ timeout: 5000 })
+        await loginPage.waitForPopUp()
 
-        const sucsessTitle = await $('//*[@resource-id="android:id/alertTitle"]').getText()
-        const sucessMsg = await $('//*[@resource-id="android:id/message"]').getText()
-        const okBtn = await $('//*[@resource-id="android:id/button1"]')
+        const successTitle = await loginPage.getSuccessTitle()
+        const successMsg = await loginPage.getSuccessMsg()
+        const successTitleText = await loginPage.getSuccessTitleText()
+        const successMsgText = await loginPage.getSuccessMsgText()
+        const okBtn = await loginPage.getOkBtn()
 
-        await okBtn.click()
+        await loginPage.clickOkBtn()
 
-        expect(sucsessTitle).toEqual('Success')
-        expect(sucessMsg).toEqual('You are logged in!')
-        expect(await $('//*[@resource-id="android:id/alertTitle"]')).not.toBeDisplayed()
-        expect(await $('//*[@resource-id="android:id/message"]')).not.toBeDisplayed()
-        expect(await $('//*[@resource-id="android:id/button1"]')).not.toBeDisplayed()
+        expect(successTitleText).toEqual('Success')
+        expect(successMsgText).toEqual('You are logged in!')
+        await expect(successTitle).not.toBeDisplayed()
+        await expect(successMsg).not.toBeDisplayed()
+        await expect(okBtn).not.toBeDisplayed()
     })
 })
