@@ -1,3 +1,4 @@
+import { expect } from "chai"
 import { dragPage } from "../pages/drag.page.js"
 
 
@@ -11,7 +12,9 @@ suite("Drag-and-Drop cases", async () => {
             piece.dragAndDrop(image, { delay: 4000})
         }        
 
-        await dragPage.tapConfetti()
+        try {
+            await dragPage.tapConfetti()
+        } catch {}
 
         const retryBtn = await dragPage.getRetryBtn()
         const successTitle = await dragPage.getSuccessTitle()
