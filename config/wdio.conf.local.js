@@ -1,14 +1,12 @@
 import path from 'path';
+import { config as conf } from './wdio.conf.parallel.devices.js'
 
 
 export const config = {
+    ...conf,
     runner: 'local',
     
     port: 4723,
-    specs: [
-        '../test/specs/**/*.js'
-    ],
-    exclude: [],
     maxInstances: 1,
     capabilities: [{
         "deviceName": process.env.DEVICE || "CUUGRWTW4TNF4DDQ",
@@ -18,26 +16,15 @@ export const config = {
         "app": process.env.APP_PATH || `${path.resolve()}\\Android-NativeDemoApp-0.4.0.apk`,
         "appWaitActivity": "*"
     }],
-    logLevel: 'info',
-    coloredLogs: true,
-    bail: 0,
-    baseUrl: '',
-    waitforTimeout: 10000,
-    connectionRetryTimeout: 120000,
-    connectionRetryCount: 3,
-    specFileRetries: 2,
-    specFileRetriesDelay: 30,
+
     services: [
         ['appium', {
             logPath: './'
         }]
     ],
-    framework: 'mocha',
-    reporters: ['spec',['allure', {outputDir: './allure-results'}]],
-    mochaOpts: {
-        ui: 'tdd',
-        timeout: 360000
-    },
+
+    beforeTest: async function() {},
+
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
         await browser.takeScreenshot()
     },
