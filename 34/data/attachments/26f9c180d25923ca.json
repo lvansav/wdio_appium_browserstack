@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//*[@content-desc=\"slideTextContainer\"]/android.widget.TextView[2]"
+}
