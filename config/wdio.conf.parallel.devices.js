@@ -1,6 +1,6 @@
 export const config = {
-    user: process.env.BROWSERSTACK_USERNAME || 'vitanave_F8exmw',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'kAqseesEdkwfryk8vwwP',
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
 
     updateJob: false,
     specs: [
@@ -12,14 +12,14 @@ export const config = {
     capabilities: [{
         project: "First Webdriverio Android Project",
         build: `Webdriverio Android Demo App ${new Date().toJSON()}`,
-        app: process.env.BROWSERSTACK_APP_ID || 'bs://faf70eba032251581a1e2e05f5e7f3a7afe3d3f0',
+        app: process.env.BROWSERSTACK_APP_ID,
         'browserstack.debug': true,
         device: 'Samsung Galaxy S21 Ultra',
         os_version: "11.0",
       }, {
         project: "First Webdriverio Android Project",
         build: `Webdriverio Android Demo App ${new Date().toJSON()}`,
-        app: process.env.BROWSERSTACK_APP_ID || 'bs://faf70eba032251581a1e2e05f5e7f3a7afe3d3f0',
+        app: process.env.BROWSERSTACK_APP_ID,
         'browserstack.debug': true,
         device: 'Samsung Galaxy A51',
         os_version: "10.0",

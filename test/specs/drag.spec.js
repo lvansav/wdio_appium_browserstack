@@ -1,4 +1,3 @@
-import { expect } from "chai"
 import { dragPage } from "../pages/drag.page.js"
 
 
