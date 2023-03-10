@@ -2,7 +2,7 @@ import { dragPage } from "../pages/drag.page.js"
 
 
 suite("Drag-and-Drop cases", async () => {
-    test.only(`Compare puzzle's pieces into image on the "Drag" screen`, async () => {
+    test.only(`Compare puzzle's pieces into image on the 'Drag' screen`, async () => {
         await dragPage.clickDragTab()
 
         for (let i = 0; i < dragPage.piecesSelects.length; i++) {

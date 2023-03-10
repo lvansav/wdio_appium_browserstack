@@ -3,7 +3,7 @@ import { loginPage } from '../pages/login.page.js'
 
 
 suite('Login cases', () => {
-    test('Sign in on the "Login" screen', async () => {     
+    test(`Sign in on the 'Login' screen`, async () => {     
         await loginPage.clickLoginTab()
 
         const email = faker.internet.email()
@@ -21,12 +21,16 @@ suite('Login cases', () => {
         const successMsgText = await loginPage.getSuccessMsgText()
         const okBtn = await loginPage.getOkBtn()
 
-        await loginPage.clickOkBtn()
-
         expect(successTitleText).toEqual('Success')
         expect(successMsgText).toEqual('You are logged in!')
-        await expect(successTitle).not.toBeDisplayed()
-        await expect(successMsg).not.toBeDisplayed()
-        await expect(okBtn).not.toBeDisplayed()
+        await expect(successTitle).toBeDisplayed()
+        await expect(successMsg).toBeDisplayed()
+        await expect(okBtn).toBeDisplayed()
+
+        await loginPage.clickOkBtn()
+
+        await expect(successTitle).not.toExist()
+        await expect(successMsg).not.toExist()
+        await expect(okBtn).not.toExist()
     })
 })

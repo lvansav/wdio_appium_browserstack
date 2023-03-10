@@ -3,7 +3,7 @@ import { loginPage, signUpPage } from '../pages/login.page.js'
 
 
 suite('Sign in cases', () => {
-    test('Sign up on the "Login" screen', async () => {
+    test(`Sign up on the 'Login' screen`, async () => {
         await loginPage.clickLoginTab()
         await loginPage.clickSignUpTab()
 
