@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Fri Mar 10 12:35:53 GMT 2023","Fri Mar 10 12:36:32 GMT 2023","38562","","Drag-and-Drop cases","","Drag-and-Drop cases","Compare puzzle's pieces into image on the ""Drag"" screen","Compare puzzle's pieces into image on the ""Drag"" screen",""
+"broken","Fri Mar 10 12:35:53 GMT 2023","Fri Mar 10 12:36:15 GMT 2023","21504","","Drag-and-Drop cases","","Drag-and-Drop cases","Compare puzzle's pieces into image on the ""Drag"" screen","Compare puzzle's pieces into image on the ""Drag"" screen",""

@@ -1,4 +1,0 @@
-{
-  "script": "browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\",\"reason\": \"Error: Can't call click on element with selector \"//*[@content-desc=\"Swipe\"]\" because element wasn't found\"}}",
-  "args": []
-}
