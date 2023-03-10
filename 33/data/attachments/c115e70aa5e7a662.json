@@ -1,0 +1,10 @@
+{
+  "actions": [
+    {
+      "action": "tap",
+      "options": {
+        "element": "adbe0a21-6873-45c0-9268-099b7f1a27b1"
+      }
+    }
+  ]
+}
